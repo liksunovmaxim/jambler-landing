@@ -12,7 +12,8 @@ var gulp           = require('gulp'),
 gulp.task('serve', ['sass'], function() {
 
 	browserSync.init({
-		proxy: "jambler.web/"
+		server: "./public",
+		port: 3010
 	});
 
 	gulp.watch("./frontend/stylesheets/**/*.scss", ['sass']);

@@ -1,11 +1,11 @@
 requirejs.config({
-	baseUrl: './public/js'
+	baseUrl: './js'
 });
 
 
 define(["jquery"], function($) {
 	"use strict";
 
-	console.log(2);
+	console.log(1);
 
 });

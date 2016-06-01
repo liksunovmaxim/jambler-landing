@@ -2,16 +2,78 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./public/css/styles.css"/>
-    <script src="./public/js/require.js" data-main="./public/js/index"></script>
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="./js/require.js" data-main="./js/index"></script>
     <title></title>
 </head>
 <body>
     <div class="wrapper">
-        jambler
+        <header class="header">
+            <div class="header__banner">
+                <img src="./images/banner-top.jpg" alt="">
+            </div>
+            <div class="menu">
+                <a href="#" class="logo">
+                    <img src="./images/logo-head.png" alt="">
+                </a>
+                <nav class="navigation">
+                    <a href="#">Посмотреть все турниры</a>
+                    <a href="#">Как играть?</a>
+                    <a class="sign-up" href="#">Зарегистрироваться</a>
+                    <a class="sign-in green-btn" href="#">Войти</a>
+                </nav>
+            </div>
+        </header>
+        <section class="presentation">
+            <div class="presentation__text-block">
+                <div class="text">
+                    Докажи, что ты лучше всех разбираешься в футболе. Прими участие в <strong>уникальных</strong> турнирах
+                </div>
+                <a href="#" class="green-btn">Начать игру</a>
+            </div>
+            <div class="presentation__image">
+                <img src="images/presentation-image.jpg" alt="">
+            </div>
+            <div class="presentation__video">
+                <div class="title">Что такое Jamber?</div>
+                <div class="trigger">
+                    <img src="./images/video-image.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="phone">
+            <div class="phone__images-block">
+                <img src="./images/phone.jpg" alt="">
+                <div class="images-holder">
+                    <ul class="images">
+                        <li>
+                            <img src="images/phone-1.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="phone__text-block">
+                <li class="text">
+                    Регистрируйся на Jambler или входи с помощью аккаунта соц. сетей
+                </li>
+                <li class="text">
+                    Регистрируйся на Jambler или входи с помощью аккаунта соц. сетей
+                </li>
+                <li class="text">
+                    Регистрируйся на Jambler или входи с помощью аккаунта соц. сетей
+                </li>
+                <li class="text">
+                    Регистрируйся на Jambler или входи с помощью аккаунта соц. сетей
+                </li>
+            </ul>
+        </section>
+        <section class="slider">
+            
+        </section>
     </div>
     <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.2.12.10.js'><\/script>".replace("HOST", location.hostname));
+    document.write("<script async src='http://HOST:3010/browser-sync/browser-sync-client.2.12.10.js'><\/script>".replace("HOST", location.hostname));
     //]]></script>
 </body>
 </html>
