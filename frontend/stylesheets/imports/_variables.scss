@@ -1,0 +1,30 @@
+// Custom global colors
+
+// Default global colors
+$colorText: #3d3d3d;
+$colorTextLight: rgba(61, 61, 61, .7);
+$colorLink: #e60000;
+$colorLinkActive: #c40000;
+$colorPlaceholder: #fff;
+$colorFocus: #00326f;
+$bgBody: #fff;
+$bgFooter: #f6f6f6;
+
+// Widths
+$minWidth: 320px;
+$maxWidth: 1366px;
+
+// Breakpoints
+
+$smallDesktop: 1320;
+$tablet: 1024;
+$mobile: 768;
+$smallMobile: 640;
+
+// Fonts
+$family: 'acrom', Arial, Helvetica, sans-serif;
+$_21px: 1.3125em;
+
+//Images
+$fonturl : '/dependencies/fonts';
+$imgurl : '/dependencies/images';

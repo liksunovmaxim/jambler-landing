@@ -1,0 +1,28 @@
+@import "imports/reset";
+@import "imports/extends";
+@import "imports/variables";
+@import "imports/tools";
+@import "imports/mixins";
+@import "imports/media-queries";
+@import "imports/fonts";
+
+.action-link{
+	color: $colorLink;
+	position: relative;
+	padding: 0 33px 0 0;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.125em;
+	letter-spacing: .5px;
+	&:after{
+		content: '\e903';
+		font-family: 'icomoon';
+		color: $colorLink;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		font-weight: normal;
+		font-size: 1.1em;
+	}
+}
