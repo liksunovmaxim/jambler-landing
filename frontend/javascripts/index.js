@@ -3,9 +3,14 @@ requirejs.config({
 });
 
 
-define(["jquery"], function($) {
+define(["jquery", "swiper"], function($) {
 	"use strict";
 
-	console.log(1);
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		scrollbar: '.swiper-scrollbar',
+		scrollbarHide: false
+	});
 
 });
