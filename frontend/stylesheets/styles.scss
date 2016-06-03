@@ -150,6 +150,9 @@ a{
 	align-items: flex-start;
 	margin: 0 auto;
 	padding: 134px 80px 0;
+	&__holder{
+		position: relative;
+	}
 	&__images-block{
 		flex: 0 0 295px;
 		margin: 8px 12px 0;
@@ -181,15 +184,29 @@ a{
 		li{
 			list-style-type: none;
 			margin: 0 0 111px;
-			&:after{
-				counter-increment: list1;
-				content: counter(list1); 
-				font-size: 6em;
-				font-weight: 500;
-				opacity: .1;
-				position: absolute;
-				right: 0;
-				top: -120px;
+			&:before{
+				display: none;
+			}
+			.text-holder{
+				&:before{
+					content: '';
+					width: 40px;
+					height: 3px;
+					background: #000;
+					position: absolute;
+					top: -13px;
+					left: 0;
+				}
+				&:after{
+					counter-increment: list1;
+					content: counter(list1);
+					font-size: 6em;
+					font-weight: 500;
+					opacity: .1;
+					position: absolute;
+					right: 0;
+					top: -120px;
+				}
 			}
 		}
 	}

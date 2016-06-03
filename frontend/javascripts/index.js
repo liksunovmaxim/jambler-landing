@@ -25,15 +25,33 @@ define([
 
 	var controller = new ScrollMagic.Controller();
 
-	var tween1 = TweenMax.staggerFromTo(".phone__images-block", 2, {top: 700, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
+	// PHONE SECTION ANIMATION
 
-	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
-		.setTween(tween1)
-		.addIndicators() // add indicators (requires plugin)
+	var tweenPhoneAnim = TweenMax.staggerFromTo(".phone__holder", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
+
+	var tweenTextAnim1 = TweenMax.staggerFromTo(".phone-text-1", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -450})
+		.setTween(tweenPhoneAnim)
+		.triggerHook(0.21)
+		.addIndicators({name: "PhoneArrive"})
 		.addTo(controller);
-	var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 200, offset: 300})
-		.setPin(".phone__images-block img")
-		.addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 4000, offset: 100})
+		.addIndicators({name: "PhonePin"})
+		.addTo(controller)
+		.triggerHook(0.21)
+		.setPin(".phone__images-block");
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 100})
+		.addIndicators({name: "Text1Pin"})
+		.addTo(controller)
+		.triggerHook(0.21)
+		.setPin(".phone-text-1 .text-holder");
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -300})
+		.setTween(tweenTextAnim1)
+		.addIndicators({name: "Text1Arrive"})
+		.addTo(controller)
+		.triggerHook(0.21)
 });
