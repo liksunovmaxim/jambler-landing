@@ -154,6 +154,7 @@ a{
 		flex: 0 0 295px;
 		margin: 8px 12px 0;
 		position: relative;
+		width: 295px !important;
 		.images-holder{
 			position: absolute;
 			width: 100%;
@@ -440,4 +441,10 @@ a{
 			&.google{ background-position: 0 100%; }
 		}
 	}
+}
+
+// Scroll Animation
+
+[id^='trigger']{
+	position: absolute;
 }
