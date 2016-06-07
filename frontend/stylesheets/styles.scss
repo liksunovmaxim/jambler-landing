@@ -14,6 +14,9 @@ body{
 	min-width: $minWidth;
 	overflow-x: hidden;
 	font: 16px/1.1 'Roboto', sans-serif;
+	@include bp($tablet){
+		font-size: 24px;
+	}
 }
 a{
 	text-decoration: none;
@@ -21,15 +24,15 @@ a{
 }
 .desktop-only{
 	@include bp($tablet){
-		display: none;
+		display: none !important;
 	}
 }
 .mobile{
 	@include bp(#{$tablet}+ 1, $type: min){
-		display: none;
+		display: none !important;
 	}
 }
-.wrapper{
+.container{
 	max-width: $maxWidth;
 	margin: 0 auto;
 }
@@ -38,6 +41,7 @@ a{
 	&__banner{
 		position: relative;
 		z-index: 2;
+		display: none;
 		@include bp($tablet){
 			display: none;
 		}
@@ -51,6 +55,9 @@ a{
 	background: $colorBtn;
 	border-radius: 2px;
 	display: inline-block;
+	@include bp($tablet){
+		border-radius: 6px;
+	}
 }
 .fb{
 	background: #3a5795;
@@ -69,6 +76,9 @@ a{
 	font-weight: 300;
 	position: relative;
 	z-index: 2;
+	@include bp($tablet){
+		line-height: 1.7;
+	}
 	&:before{
 		content: '';
 		width: 40px;
@@ -77,6 +87,20 @@ a{
 		position: absolute;
 		top: -13px;
 		left: 0;
+		@include bp($tablet){
+			width: 80px;
+			height: 6px;
+			top: -42px;
+		}
+	}
+}
+.logo{
+	@include bp($tablet){
+		position: absolute;
+		left: 50%;
+		top: 46px;
+		transform: translateX(-50%);
+		z-index: 6;
 	}
 }
 .menu{
@@ -85,7 +109,10 @@ a{
 	padding: 78px 80px 25px;
 	position: relative;
 	@include bp($tablet){
-		padding: 46px 40px 25px;
+		padding: 58px 40px 25px;
+	}
+	@include bp($tablet){
+		align-items: center;
 	}
 	&:before{
 		content: '';
@@ -96,18 +123,80 @@ a{
 		width: 95px;
 		height: 244px;
 		z-index: 1;
+		@include bp($tablet){
+			display: none;
+		}
+	}
+	.burger-btn{
+		width: 35px;
+		height: 15px;
+		position: relative;
+		z-index: 6;
+		@include anim($param: height, $dur:.3s, $delay: .3s);
+		&.active{
+			height: 2px;
+			transition-delay: 0s;
+			&:after{
+				transform: rotate(45deg);
+				transition-delay: .3s;
+			}
+			&:before{
+				transform: rotate(-45deg);
+				transition-delay: .3s;
+			}
+		}
+		&:after,
+		&:before{
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: $colorBtn;
+			position: absolute;
+			left: 0;
+			top: 0;
+			@include anim($param: transform, $dur:.3s, $delay: 0s);
+		}
+		&:after{
+			top: auto;
+			bottom: 0;
+		}
 	}
 	.navigation{
 		font-size: .875em;
 		margin: 3px 0 0;
 		position: relative;
 		z-index: 2;
+		@include bp(#{$tablet}+ 1, $type: min){
+			display: block !important;
+		}
+		@include bp($tablet){
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			padding: 139px 40px 150px;
+			z-index: 5;
+			background: #fff;
+			box-sizing: border-box;
+		}
 		a{
 			display: inline-block;
 			vertical-align: middle;
 			margin: 0 0 0 8px;
+			@include bp($tablet){
+				display: block;
+				border-bottom: 1px solid #ccc;
+				margin: 0 !important;
+				background: transparent !important;
+				font-size: 1.2em;
+				padding: 20px 0 !important;
+			}
 			&:first-child{
 				margin: 0 27px 0 0;
+				@include bp($tablet){
+					border-top: 1px solid #ccc;
+				}
 			}
 			&.sign-up{
 				padding: 8px 29px;
@@ -120,23 +209,62 @@ a{
 			}
 		}
 	}
+	.sign-in{
+		&.mobile{
+			order: 3;
+			color: $colorBtn;
+			background: transparent;
+			font-size: 1.2em;
+			padding: 2px 0 10px 47px;
+			position: relative;
+			z-index: 6;
+			&:before{
+				content: '';
+				width: 36px;
+				height: 40px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: url('../images/slider-icons.png') no-repeat 100% 0;
+			}
+		}
+	}
 }
 .presentation{
-	padding: 173px 80px 80px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-	position: relative;
+	.container{
+		padding: 173px 80px 80px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		position: relative;
+		box-sizing: border-box;
+		@include bp($tablet){
+			padding: 173px 40px 80px;
+			flex-direction: column;
+		}
+	}
 	&__text-block{
 		flex: 0 0 400px;
 		z-index: 2;
+		@include bp($tablet) {
+			margin: 0 0 159px;
+		}
 		.text{
 			margin: 0 0 58px;
+			@include bp($tablet){
+				margin: 0 0 98px;
+			}
 		}
 	}
 	.green-btn{
 		font-size: 1.125em;
 		padding: 15px 49px;
+		@include bp($tablet){
+			display: block;
+			text-align: center;
+			font-size: 1.5em;
+			padding: 31px 49px;
+		}
 	}
 	&__image{
 		position: absolute;
@@ -148,15 +276,29 @@ a{
 		position: relative;
 		text-align: center;
 		z-index: 2;
+		@include bp($tablet){
+			width: 100%;
+			text-align: left;
+		}
 		.title{
 			font-weight: bold;
 			text-transform: uppercase;
 			font-size: .875em;
 			margin: 0 0 32px;
 			letter-spacing: .5px;
+			@include bp($tablet) {
+				font-size: 1.125em;
+				margin: 0 0 47px;
+			}
 		}
 		.trigger{
 			position: relative;
+			img{
+				@include bp($tablet) {
+					max-width: none;
+					width: 100%;
+				}
+			}
 		}
 		.play-button{
 			position: absolute;
@@ -175,6 +317,9 @@ a{
 	align-items: flex-start;
 	margin: 0 auto;
 	padding: 134px 80px;
+	@include bp($tablet) {
+		padding: 209px 40px 143px;
+	}
 	&__holder{
 		position: relative;
 	}
@@ -244,11 +389,29 @@ a{
 	&__text-block{
 		flex: 0 0 402px;
 		counter-reset: list1;
+		@include bp($tablet) {
+			flex-grow: 1;
+			width: 100%;
+		}
 		li{
 			list-style-type: none;
 			margin: 0 0 111px;
+			@include bp($tablet) {
+				top: auto !important;
+				opacity: 1 !important;
+				width: 100%;
+				margin: 0 0 209px;
+			}
+			&:last-child{
+				@include bp($tablet) {
+					margin: 0;
+				}
+			}
 			&:not(:first-child){
 				margin-top: 350px;
+				@include bp($tablet) {
+					margin-top: 0;
+				}
 			}
 			&:before{
 				display: none;
@@ -262,6 +425,11 @@ a{
 					position: absolute;
 					top: -13px;
 					left: 0;
+					@include bp($tablet) {
+						top: -39px;
+						height: 6px;
+						width: 80px;
+					}
 				}
 				&:after{
 					counter-increment: list1;
@@ -272,17 +440,24 @@ a{
 					position: absolute;
 					right: 0;
 					top: -120px;
+					@include bp($tablet) {
+						font-size: 8.3em;
+						right: -17px;
+						top: -286px;
+					}
 				}
 			}
 		}
 	}
 }
 .slider{
-	padding: 86px 0 0;
 	background: #f6f1f1;
 	cursor: grab;
 	&:active{
 		cursor: grabbing;
+	}
+	.slider-holder{
+		padding: 86px 0 0;
 	}
 	.swiper-wrapper{
 		align-items: flex-end;
@@ -302,6 +477,203 @@ a{
 		}
 		&:last-child{
 			align-self: flex-start;
+		}
+		.text-box{
+			color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #0d221b;
+			border-radius: 4px;
+			font-size: .75em;
+			z-index: 1;
+			box-sizing: border-box;
+			padding: 15px 20px;
+			line-height: 1.5;
+			&:after{
+				content: '';
+				width: 5px;
+				height: 5px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 50%;
+				z-index: 1;
+				background: #0d221b;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				bottom: 0;
+				right: 0;
+				background: url('../images/slider-icons.png') no-repeat 0 0;
+			}
+		}
+		&:nth-child(1){
+			.text{
+				position: absolute;
+				left: 159px;
+				top: -32px;
+				margin: 0;
+				z-index: 1;
+			}
+			.text-box{
+				width: 160px;
+				left: auto;
+				right: -134px;
+				top: 121px;
+				&:after{
+					top: auto;
+					bottom: -9px;
+					left: -10px;
+				}
+				&:before {
+					width: 21px;
+					height: 21px;
+					right: 9px;
+					bottom: 8px;
+				}
+			}
+		}
+		&:nth-child(2){
+			.text-box{
+				width: 261px;
+				left: auto;
+				right: -40px;
+				top: 41px;
+				&:after{
+					top: auto;
+					bottom: -9px;
+					left: -10px;
+				}
+				&:before {
+					width: 20px;
+					height: 20px;
+					right: 9px;
+					bottom: 8px;
+					background-position: -24px 0;
+				}
+			}
+		}
+		&:nth-child(3){
+			.text-box{
+				width: 180px;
+				left: -80px;
+				top: auto;
+				bottom: 41px;
+				&:after{
+					top: -9px;
+					right: -10px;
+					left: auto;
+				}
+				&:before {
+					width: 12px;
+					height: 16px;
+					right: 9px;
+					bottom: 8px;
+					background-position: -144px -4px;
+				}
+				&-second{
+					left: auto;
+					right: 10px;
+					top: 29px;
+					bottom: auto;
+					&:after{
+						top: auto;
+						bottom: -9px;
+						left: -10px;
+					}
+					&:before {
+						width: 20px;
+						height: 20px;
+						right: 9px;
+						bottom: 8px;
+						background-position: -49px -4px;
+					}
+				}
+			}
+		}
+		&:nth-child(4){
+			.text-box{
+				width: 180px;
+				left: -109px;
+				top: auto;
+				bottom: 43px;
+				&:after{
+					top: -9px;
+					right: -10px;
+					left: auto;
+				}
+				&:before {
+					width: 20px;
+					height: 21px;
+					right: 9px;
+					bottom: 8px;
+					background-position: -73px 0;
+				}
+			}
+		}
+		&:nth-child(5){
+			.text-box{
+				width: 188px;
+				left: -38px;
+				top: auto;
+				bottom: 31px;
+				&:after{
+					top: -9px;
+					right: -10px;
+					left: auto;
+				}
+				&:before {
+					width: 20px;
+					height: 21px;
+					right: 9px;
+					bottom: 8px;
+					background-position: -94px 0;
+				}
+				&-second{
+					left: auto;
+					right: -89px;
+					top: 6px;
+					bottom: auto;
+					width: 265px;
+					&:after{
+						top: auto;
+						bottom: -9px;
+						left: -10px;
+					}
+					&:before {
+						width: 20px;
+						height: 20px;
+						right: 9px;
+						bottom: 8px;
+						background-position: -165px -3px;
+					}
+				}
+			}
+		}
+		&:nth-child(6){
+			.text-box{
+				width: 260px;
+				left: -51px;
+				top: auto;
+				bottom: 76px;
+				&:after{
+					top: auto;
+					bottom: -9px;
+					right: -10px;
+					left: auto;
+				}
+				&:before {
+					width: 20px;
+					height: 21px;
+					right: 9px;
+					bottom: 8px;
+					background-position: -118px 0;
+				}
+			}
 		}
 	}
 	.swiper-scrollbar{
@@ -407,6 +779,9 @@ a{
 	padding: 0 80px 80px;
 	display: flex;
 	justify-content: space-between;
+	max-width: 1360px;
+	margin: 0 auto;
+	box-sizing: border-box;
 	&__tournaments{
 		// flex-shrink: 0;
 		position: relative;
@@ -447,7 +822,8 @@ a{
 			padding: 0 0 11px 23px;
 			&:focus, &:valid{
 				& + label{
-					transform: translate3d(0, -20px, 0) scale(.85);
+					transform: translate3d(0, -20px, 0);
+					font-size: .875em;
 				}
 			}
 			& + label{
@@ -457,7 +833,9 @@ a{
 				font-size: 1.125em;
 				color: #999;
 				transform: translate3d(23px, 0, 0);
-				@include anim($param: transform, $dur: .2s);
+				@include anim($dur: .2s);
+				@include anim-param(font-size, transform);
+				cursor: text;
 			}
 		}
 		button{
@@ -492,11 +870,14 @@ a{
 .footer{
 	border-top: 1px solid #d8d8d8;
 	background: $bgSection;
-	padding: 30px 80px;
-	font-size: .75em;
-	display: flex;
-	justify-content: space-between;
 	color: #9a9a9a;
+	.container{
+		padding: 30px 80px;
+		font-size: .75em;
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+	}
 	a{
 		color: $colorBtn;
 	}

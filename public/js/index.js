@@ -22,7 +22,18 @@ define([
 		slidesPerView: 'auto',
 		freeMode: true,
 		scrollbar: '.swiper-scrollbar',
-		scrollbarHide: false
+		scrollbarHide: false,
+		breakpoints: {
+			950: {
+				freeMode: false,
+				slidesPerView: 1,
+				scrollbar: false,
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev'
+			}
+		}
 	});
 
 	var controller = new ScrollMagic.Controller();
@@ -33,6 +44,22 @@ define([
 			controller.destroy(true);
 		} else {
 			controller.update(true);
+		}
+	});
+
+	$(window).on('load', function(){
+		if($(this).width() < mobileWidth){
+			controller.destroy(true);
+		}
+	});
+
+	$('.burger-btn').on('click', function(){
+		if(!$(this).hasClass('active')){
+			$(this).addClass('active');
+			$(this).next().slideDown('fast');
+		} else {
+			$(this).removeClass('active');
+			$(this).next().slideUp('fast');
 		}
 	});
 
