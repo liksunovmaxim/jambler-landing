@@ -17,11 +17,12 @@
                 <a href="#" class="logo">
                     <img src="./images/logo-head.png" alt="">
                 </a>
+                <div class="burger-btn mobile"></div>
                 <nav class="navigation">
                     <a href="#">Посмотреть все турниры</a>
                     <a href="#">Как играть?</a>
                     <a class="sign-up" href="#">Зарегистрироваться</a>
-                    <a class="sign-in green-btn" href="#">Войти</a>
+                    <a class="sign-in green-btn desktop-only" href="#">Войти</a>
                 </nav>
             </div>
         </header>
@@ -36,9 +37,12 @@
                 <img src="images/presentation-image.jpg" alt="">
             </div>
             <div class="presentation__video">
-                <div class="title">Что такое Jamber?</div>
+                <div class="title">Что такое Jambler?</div>
                 <div class="trigger">
                     <img src="./images/video-image.jpg" alt="">
+                    <div class="play-button">
+                        
+                    </div>
                 </div>
             </div>
         </section>
@@ -51,6 +55,15 @@
                         <ul class="images">
                             <li>
                                 <img src="images/phone-1.jpg" alt="">
+                            </li>
+                             <li class="image2">
+                                <img src="images/phone-2.jpg" alt="">
+                            </li>
+                             <li class="image3">
+                                <img src="images/phone-3.jpg" alt="">
+                            </li>
+                             <li class="image4">
+                                <img src="images/phone-4.jpg" alt="">
                             </li>
                         </ul>
                     </div>
@@ -102,8 +115,9 @@
             </div>
         </section>
         <section class="social-section">
+            <div id="trigger1"></div>
             <div class="social-section__buttons">
-                <div class="button-holder">
+                <div class="button-holder fb-holder">
                     <a class="button icon-facebook" href="#">
                         пригласить друзей через facebook
                     </a>
@@ -111,7 +125,7 @@
                         +1.6 k
                     </span>
                 </div>
-                <div class="button-holder">
+                <div class="button-holder gp-holder">
                     <a class="button icon-google-plus" href="#">
                         пригласить друзей через google+
                     </a>
@@ -119,7 +133,7 @@
                         +568
                     </span>
                 </div>
-                <div class="button-holder">
+                <div class="button-holder vk-holder">
                     <a class="button icon-vkontakte" href="#">
                         пригласить друзей через vkontakte
                     </a>
@@ -129,15 +143,18 @@
                 </div>
             </div>
             <div class="text">
-                Чем больше участников тем выше призовые в турнирах. Приглашай друзей на Jambler, выигрывай больше
+                <div class="text-wrapper">
+                    Чем больше участников тем выше призовые в турнирах. Приглашай друзей на Jambler, выигрывай больше
+                </div>
             </div>
         </section>
         <section class="live">
+            <div id="trigger2"></div>
             <div class="text">
                 Присоединяйся к уже начавшимся турнирам или зарегистрируйся на предстоящие.
             </div>
             <div class="live__tournaments">
-
+                <img src="./images/tournaments.jpg" alt="">
             </div>
         </section>
         <section class="registration">
@@ -218,6 +235,14 @@
                 </div>
             </div>
         </footer>
+        <div class="popup-holder">
+            <div class="popup-hidder">
+            </div>
+            <div class="popup-wrapper">
+                <video id="Jvideo" controls src="images/intro_jambler_landing.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                </video>
+            </div>
+        </div>
     </div>
     <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3010/browser-sync/browser-sync-client.2.12.10.js'><\/script>".replace("HOST", location.hostname));
