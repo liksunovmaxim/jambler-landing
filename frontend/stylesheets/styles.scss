@@ -272,12 +272,17 @@ a{
 }
 .presentation{
 	.container{
-		padding: 173px 80px 80px;
+		padding: 80px;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		position: relative;
 		box-sizing: border-box;
+		@include bp(#{$tablet}+ 1, $type: min){
+			height: calc(100vh - 137px);
+			min-height: 454px;
+			align-items: center;
+		}
 		@include bp($tablet){
 			padding: 173px 40px 80px;
 			flex-direction: column;
