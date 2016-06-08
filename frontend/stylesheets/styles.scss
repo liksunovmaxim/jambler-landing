@@ -422,12 +422,13 @@ a{
 					font-size: .875em;
 					@include anim($param: opacity, $dur: .2s);
 					@include bp($tablet){
-						width: 165px;
+						width: 200px;
 						bottom: -40px;
 						font-size: 1em;
 					}
 					@include bp($mobile) {
 						width: 95px;
+						bottom: -20px;
 					}
 				}
 			}
