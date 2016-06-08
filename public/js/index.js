@@ -82,6 +82,8 @@ define([
 
 	var tweenTextHolderAnim4 = TweenMax.staggerFromTo(".phone-text-4 .text-holder", 2, {opacity: 0}, {opacity: 1, ease: Back.linear}, 0.15);
 
+	var tweenCoeffsAnim = TweenMax.staggerFromTo(".coeffs", 2, {left: 0}, {left: -766, ease: Back.linear}, 0.15);
+
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800, offset: -750})
 		.setTween(tweenPhoneAnim)
 		.triggerHook(0.21)
@@ -138,6 +140,12 @@ define([
 		.addIndicators({name: "image3 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 900})
+		.setTween(tweenCoeffsAnim)
+		.addIndicators({name: "Coeffs"})
+		.addTo(controller)
+		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 1400})
 		.setTween(tweenTextAnim4)

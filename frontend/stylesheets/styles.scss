@@ -502,6 +502,14 @@ a{
 						transform: translateX(calc(-100% + 35px));
 					}
 				}
+				.coeffs{
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: auto;
+					height: auto;
+					max-width: none;
+				}
 				&.arrived{
 					transform: translateX(-100%);
 				}
