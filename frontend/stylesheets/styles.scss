@@ -272,7 +272,7 @@ a{
 }
 .presentation{
 	.container{
-		padding: 80px;
+		padding: 80px 80px 120px;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
@@ -335,6 +335,7 @@ a{
 		text-align: center;
 		z-index: 2;
 		width: 280px;
+		align-self: flex-end;
 		@include bp($tablet){
 			width: 100%;
 			text-align: left;
