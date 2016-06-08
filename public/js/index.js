@@ -37,7 +37,6 @@ define([
 	});
 
 	var controller = new ScrollMagic.Controller();
-	console.log(controller);
 
 	$(window).on('resize', function(){
 		if($(this).width() < mobileWidth){
@@ -67,7 +66,21 @@ define([
 
 	var tweenPhoneAnim = TweenMax.staggerFromTo(".phone__holder", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
 
-	var tweenTextAnim1 = TweenMax.staggerFromTo(".phone-text-1", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
+	var tweenTextAnim1 = TweenMax.staggerFromTo(".phone-text-1", 2, {top: 600}, {top: -300, ease: Back.linear}, 0.15);
+
+	var tweenTextHolderAnim1 = TweenMax.staggerFromTo(".phone-text-1 .text-holder", 2, {opacity: 0}, {opacity:1, ease: Back.linear}, 0.15);
+
+	var tweenTextAnim2 = TweenMax.staggerFromTo(".phone-text-2", 2, {top: 600}, {top: -300, ease: Back.linear}, 0.15);
+
+	var tweenTextHolderAnim2 = TweenMax.staggerFromTo(".phone-text-2 .text-holder", 2, {opacity: 0}, {opacity: 1, ease: Back.linear}, 0.15);
+
+	var tweenTextAnim3 = TweenMax.staggerFromTo(".phone-text-3", 2, {top: 600}, {top: -300, ease: Back.linear}, 0.15);
+
+	var tweenTextHolderAnim3 = TweenMax.staggerFromTo(".phone-text-3 .text-holder", 2, {opacity: 0}, {opacity: 1, ease: Back.linear}, 0.15);
+
+	var tweenTextAnim4 = TweenMax.staggerFromTo(".phone-text-4", 2, {top: 600}, {top: -300, ease: Back.linear}, 0.15);
+
+	var tweenTextHolderAnim4 = TweenMax.staggerFromTo(".phone-text-4 .text-holder", 2, {opacity: 0}, {opacity: 1, ease: Back.linear}, 0.15);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -450})
 		.setTween(tweenPhoneAnim)
@@ -75,29 +88,33 @@ define([
 		.addIndicators({name: "PhoneArrive"})
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3200, offset: 100})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1300, offset: 100})
 		.addIndicators({name: "PhonePin"})
 		.addTo(controller)
 		.triggerHook(0.21)
 		.setPin(".phone__images-block");
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 100})
-		.addIndicators({name: "Text1Pin"})
-		.addTo(controller)
-		.triggerHook(0.21)
-		.setPin(".phone-text-1 .text-holder");
-
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -300})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: -200})
 		.setTween(tweenTextAnim1)
 		.addIndicators({name: "Text1Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 1050})
-		.addIndicators({name: "Text2Pin"})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -200})
+		.setTween(tweenTextHolderAnim1)
+		.addIndicators({name: "Text1Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
-		.setPin(".phone-text-2 .text-holder");
+
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 200})
+		.setTween(tweenTextAnim2)
+		.addIndicators({name: "Text2Arrive"})
+		.addTo(controller)
+		.triggerHook(0.21)
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 200})
+		.setTween(tweenTextHolderAnim2)
+		.addIndicators({name: "Text2Opacity"})
+		.addTo(controller)
+		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1050})
 		.setClassToggle(".image2", "arrived")
@@ -105,11 +122,16 @@ define([
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 2000})
-		.addIndicators({name: "Text3Pin"})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 600})
+		.setTween(tweenTextAnim3)
+		.addIndicators({name: "Text3Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-		.setPin(".phone-text-3 .text-holder");
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 600})
+		.setTween(tweenTextHolderAnim3)
+		.addIndicators({name: "Text3Opacity"})
+		.addTo(controller)
+		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 2000})
 		.setClassToggle(".image3", "arrived")
@@ -117,11 +139,16 @@ define([
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 3000})
-		.addIndicators({name: "Text4Pin"})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 1000})
+		.setTween(tweenTextAnim4)
+		.addIndicators({name: "Text4Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-		.setPin(".phone-text-4 .text-holder");
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 1000})
+		.setTween(tweenTextHolderAnim4)
+		.addIndicators({name: "Text4Opacity"})
+		.addTo(controller)
+		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 3000})
 		.setClassToggle(".image3", "with-shadow")
