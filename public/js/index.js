@@ -116,7 +116,7 @@ define([
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1050})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 200})
 		.setClassToggle(".image2", "arrived")
 		.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
@@ -133,7 +133,7 @@ define([
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 2000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 600})
 		.setClassToggle(".image3", "arrived")
 		.addIndicators({name: "image3 - add a class"})
 		.triggerHook(0.21)
@@ -150,13 +150,13 @@ define([
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 3000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1000})
 		.setClassToggle(".image3", "with-shadow")
 		.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 3000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1000})
 		.setClassToggle(".image4", "arrived")
 		.addIndicators({name: "image4 - add a class"})
 		.triggerHook(0.21)
