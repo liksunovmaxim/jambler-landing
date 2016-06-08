@@ -37,7 +37,6 @@ define([
 	});
 
 	var controller = new ScrollMagic.Controller();
-	console.log(controller);
 
 	$(window).on('resize', function(){
 		if($(this).width() < mobileWidth){
