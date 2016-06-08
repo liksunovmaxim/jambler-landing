@@ -82,19 +82,19 @@ define([
 
 	var tweenTextHolderAnim4 = TweenMax.staggerFromTo(".phone-text-4 .text-holder", 2, {opacity: 0}, {opacity: 1, ease: Back.linear}, 0.15);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -450})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800, offset: -750})
 		.setTween(tweenPhoneAnim)
 		.triggerHook(0.21)
 		.addIndicators({name: "PhoneArrive"})
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1300, offset: 100})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1700, offset: 100})
 		.addIndicators({name: "PhonePin"})
 		.addTo(controller)
 		.triggerHook(0.21)
 		.setPin(".phone__images-block");
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: -200})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: -200})
 		.setTween(tweenTextAnim1)
 		.addIndicators({name: "Text1Arrive"})
 		.addTo(controller)
@@ -105,58 +105,58 @@ define([
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 200})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 400})
 		.setTween(tweenTextAnim2)
 		.addIndicators({name: "Text2Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 200})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 400})
 		.setTween(tweenTextHolderAnim2)
 		.addIndicators({name: "Text2Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 200})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 400})
 		.setClassToggle(".image2", "arrived")
 		.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 600})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 900})
 		.setTween(tweenTextAnim3)
 		.addIndicators({name: "Text3Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 600})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 900})
 		.setTween(tweenTextHolderAnim3)
 		.addIndicators({name: "Text3Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 600})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 900})
 		.setClassToggle(".image3", "arrived")
 		.addIndicators({name: "image3 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 1000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 1400})
 		.setTween(tweenTextAnim4)
 		.addIndicators({name: "Text4Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 1000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 1400})
 		.setTween(tweenTextHolderAnim4)
 		.addIndicators({name: "Text4Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1400})
 		.setClassToggle(".image3", "with-shadow")
 		.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1000})
+	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1400})
 		.setClassToggle(".image4", "arrived")
 		.addIndicators({name: "image4 - add a class"})
 		.triggerHook(0.21)

@@ -1242,9 +1242,19 @@ a{
 	}
 	&__tournaments{
 		position: relative;
+		text-align: center;
+		img{
+			margin: 0 0 20px;
+			@include bp($tablet){
+				margin: 0;
+			}
+		}
 		@include bp($tablet){
 			top: 0 !important;
 			opacity: 1 !important;
+		}
+		.view-all{
+			color: $colorBtn;
 		}
 	}
 	.text{
