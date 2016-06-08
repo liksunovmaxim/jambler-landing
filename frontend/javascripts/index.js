@@ -141,7 +141,7 @@ define([
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 955})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 970})
 		.setTween(tweenCoeffsAnim)
 		.addIndicators({name: "Coeffs"})
 		.addTo(controller)
@@ -184,17 +184,17 @@ define([
 		.addIndicators({name: "sOCIALTextArrive"})
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
-		.setPin('.social-section .text-wrapper')
-		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALTextPin"})
-		.addTo(controller);
+	//new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
+	//	.setPin('.social-section .text-wrapper')
+	//	.triggerHook(0.5)
+	//	.addIndicators({name: "sOCIALTextPin"})
+	//	.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
-		.setPin('.social-section__buttons')
-		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALTextPin"})
-		.addTo(controller);
+	//new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
+	//	.setPin('.social-section__buttons')
+	//	.triggerHook(0.5)
+	//	.addIndicators({name: "sOCIALTextPin"})
+	//	.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 400, offset: -150})
 		.setTween(tweenButton1Anim)

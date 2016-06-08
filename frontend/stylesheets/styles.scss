@@ -1242,15 +1242,16 @@ a{
 	}
 }
 .live {
-	padding: 0 80px 80px;
+	padding: 0 80px;
 	display: flex;
 	justify-content: space-between;
 	max-width: 1360px;
-	margin: 0 auto;
+	margin: 0 auto -45px;
 	box-sizing: border-box;
 	@include bp($tablet){
 		flex-direction: column;
 		padding: 0;
+		margin: 0 auto;
 	}
 	&__tournaments{
 		position: relative;
