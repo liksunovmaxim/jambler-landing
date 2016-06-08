@@ -23,15 +23,15 @@ define([
 		freeMode: true,
 		scrollbar: '.swiper-scrollbar',
 		scrollbarHide: false,
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
 		breakpoints: {
 			950: {
 				freeMode: false,
 				slidesPerView: 1,
-				scrollbar: false,
-				pagination: '.swiper-pagination',
-				paginationClickable: true,
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev'
+				scrollbar: false
 			}
 		}
 	});

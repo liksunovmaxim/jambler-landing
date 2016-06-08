@@ -606,7 +606,9 @@ a{
 		align-items: flex-end;
 	}
 	.swiper-slide{
-		width: auto;
+		@include bp(#{$tablet}+ 1, $type: min) {
+			width: auto !important;
+		}
 		&:nth-child(4){
 			margin: 0 0 0 80px;
 			@include bp($tablet){
