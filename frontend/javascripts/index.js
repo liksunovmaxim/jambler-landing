@@ -141,7 +141,7 @@ define([
 		.triggerHook(0.21)
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 900})
+	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, offset: 955})
 		.setTween(tweenCoeffsAnim)
 		.addIndicators({name: "Coeffs"})
 		.addTo(controller)
