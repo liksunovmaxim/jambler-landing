@@ -65,6 +65,16 @@ a{
 		border-radius: 3px;
 	}
 }
+.button,
+.green-btn,
+.fb,.gplus,.vk{
+	@include bp(#{$tablet}+ 1, $type: min){
+		@include anim($param: opacity, $dur: .2s);
+		&:hover{
+			opacity: .8;
+		}
+	}
+}
 .fb{
 	background: #3a5795;
 }
@@ -213,6 +223,26 @@ a{
 			display: inline-block;
 			vertical-align: middle;
 			margin: 0 0 0 8px;
+			@include bp(#{$tablet}+ 1, $type: min){
+				&:not([class]) {
+					position: relative;
+					&:after {
+						content: '';
+						width: 0;
+						height: 1px;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						@include anim($param: width, $dur: .2s);
+						background: #000;
+					}
+					&:hover{
+						&:after{
+							width: 100%;
+						}
+					}
+				}
+			}
 			@include bp($tablet){
 				display: block;
 				border-bottom: 1px solid #ccc;
@@ -235,6 +265,12 @@ a{
 				border-radius: 2px;
 				background: #f7cb00;
 				margin: 0 0 0 37px;
+				@include bp(#{$tablet}+ 1, $type: min){
+					@include anim($param: opacity, $dur: .2s);
+					&:hover{
+						opacity: .8;
+					}
+				}
 			}
 			&.sign-in{
 				padding: 8px 17px;
@@ -1268,6 +1304,24 @@ a{
 		}
 		.view-all{
 			color: $colorBtn;
+			@include bp(#{$tablet}+ 1, $type: min){
+				position: relative;
+				&:after {
+					content: '';
+					width: 0;
+					height: 1px;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					@include anim($param: width, $dur: .2s);
+					background: $colorBtn;
+				}
+				&:hover{
+					&:after{
+						width: 100%;
+					}
+				}
+			}
 		}
 	}
 	.text{
@@ -1473,6 +1527,26 @@ a{
 			flex-basis: auto;
 			flex-direction: column;
 		}
+		a{
+			@include bp(#{$tablet}+ 1, $type: min){
+				position: relative;
+				&:after {
+					content: '';
+					width: 0;
+					height: 1px;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					@include anim($param: width, $dur: .2s);
+					background: $colorBtn;
+				}
+				&:hover{
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
 		.title{
 			margin: 0 0 29px;
 			@include bp($tablet) {
@@ -1568,6 +1642,14 @@ a{
 		justify-content: space-between;
 		@include bp($tablet) {
 			flex-basis: auto;
+		}
+		a{
+			@include bp(#{$tablet}+ 1, $type: min){
+				@include anim($param: opacity, $dur: .2s);
+				&:hover{
+					opacity: .8;
+				}
+			}
 		}
 		.social{
 			display: flex;

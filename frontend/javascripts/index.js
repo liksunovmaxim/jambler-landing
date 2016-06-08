@@ -87,86 +87,86 @@ define([
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800, offset: -750})
 		.setTween(tweenPhoneAnim)
 		.triggerHook(0.21)
-		.addIndicators({name: "PhoneArrive"})
+		//.addIndicators({name: "PhoneArrive"})
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1700, offset: 100})
-		.addIndicators({name: "PhonePin"})
+		//.addIndicators({name: "PhonePin"})
 		.addTo(controller)
 		.triggerHook(0.21)
 		.setPin(".phone__images-block");
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: -200})
 		.setTween(tweenTextAnim1)
-		.addIndicators({name: "Text1Arrive"})
+		//.addIndicators({name: "Text1Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: -200})
 		.setTween(tweenTextHolderAnim1)
-		.addIndicators({name: "Text1Opacity"})
+		//.addIndicators({name: "Text1Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 400})
 		.setTween(tweenTextAnim2)
-		.addIndicators({name: "Text2Arrive"})
+		//.addIndicators({name: "Text2Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 400})
 		.setTween(tweenTextHolderAnim2)
-		.addIndicators({name: "Text2Opacity"})
+		//.addIndicators({name: "Text2Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 400})
 		.setClassToggle(".image2", "arrived")
-		.addIndicators({name: "image2 - add a class"})
+		//.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 900})
 		.setTween(tweenTextAnim3)
-		.addIndicators({name: "Text3Arrive"})
+		//.addIndicators({name: "Text3Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 900})
 		.setTween(tweenTextHolderAnim3)
-		.addIndicators({name: "Text3Opacity"})
+		//.addIndicators({name: "Text3Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 900})
 		.setClassToggle(".image3", "arrived")
-		.addIndicators({name: "image3 - add a class"})
+		//.addIndicators({name: "image3 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1000, offset: 970})
 		.setTween(tweenCoeffsAnim)
-		.addIndicators({name: "Coeffs"})
+		//.addIndicators({name: "Coeffs"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000, offset: 1400})
 		.setTween(tweenTextAnim4)
-		.addIndicators({name: "Text4Arrive"})
+		//.addIndicators({name: "Text4Arrive"})
 		.addTo(controller)
 		.triggerHook(0.21)
 	new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, offset: 1400})
 		.setTween(tweenTextHolderAnim4)
-		.addIndicators({name: "Text4Opacity"})
+		//.addIndicators({name: "Text4Opacity"})
 		.addTo(controller)
 		.triggerHook(0.21)
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1400})
 		.setClassToggle(".image3", "with-shadow")
-		.addIndicators({name: "image2 - add a class"})
+		//.addIndicators({name: "image2 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger", offset: 1400})
 		.setClassToggle(".image4", "arrived")
-		.addIndicators({name: "image4 - add a class"})
+		//.addIndicators({name: "image4 - add a class"})
 		.triggerHook(0.21)
 		.addTo(controller);
 
@@ -181,37 +181,25 @@ define([
 	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 300, offset: -300})
 		.setTween(tweenButtonTextAnim)
 		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALTextArrive"})
+		//.addIndicators({name: "sOCIALTextArrive"})
 		.addTo(controller);
-
-	//new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
-	//	.setPin('.social-section .text-wrapper')
-	//	.triggerHook(0.5)
-	//	.addIndicators({name: "sOCIALTextPin"})
-	//	.addTo(controller);
-
-	//new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 250, offset: 400})
-	//	.setPin('.social-section__buttons')
-	//	.triggerHook(0.5)
-	//	.addIndicators({name: "sOCIALTextPin"})
-	//	.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 400, offset: -150})
 		.setTween(tweenButton1Anim)
 		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALButton1Arrive"})
+		//.addIndicators({name: "sOCIALButton1Arrive"})
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 300, offset: -50})
 		.setTween(tweenButton2Anim)
 		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALButton1Arrive"})
+		//.addIndicators({name: "sOCIALButton1Arrive"})
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 200, offset: 50})
 		.setTween(tweenButton3Anim)
 		.triggerHook(0.5)
-		.addIndicators({name: "sOCIALButton1Arrive"})
+		//.addIndicators({name: "sOCIALButton1Arrive"})
 		.addTo(controller);
 
 	// LIVE SECTION ANIMATION
@@ -222,13 +210,13 @@ define([
 	new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 300, offset: -450})
 		.setTween(tweenLiveTextAnim)
 		.triggerHook(0.5)
-		.addIndicators({name: "LiveTextArrive"})
+		//.addIndicators({name: "LiveTextArrive"})
 		.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 700, offset: -150})
 		.setTween(tweenTournamentAnim)
 		.triggerHook(0.5)
-		.addIndicators({name: "TornamentArrive"})
+		//.addIndicators({name: "TornamentArrive"})
 		.addTo(controller);
 
 	$(document).on('ready',function(){
