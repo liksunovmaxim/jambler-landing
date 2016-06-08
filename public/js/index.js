@@ -182,7 +182,7 @@ define([
 	// LIVE SECTION ANIMATION
 
 	var tweenLiveTextAnim = TweenMax.staggerFromTo(".live .text", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
-	var tweenTournamentAnim = TweenMax.staggerFromTo(".live__tournaments", 2, {top: 400, opacity: 0}, {top: 0, opacity:1, ease: Back.linear}, 0.15);
+	var tweenTournamentAnim = TweenMax.staggerFromTo(".live__tournaments", 2, {top: 400, opacity: 0}, {top: -200, opacity:1, ease: Back.linear}, 0.15);
 
 	new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 300, offset: -450})
 		.setTween(tweenLiveTextAnim)
@@ -190,7 +190,7 @@ define([
 		.addIndicators({name: "LiveTextArrive"})
 		.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 200, offset: -150})
+	new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 700, offset: -150})
 		.setTween(tweenTournamentAnim)
 		.triggerHook(0.5)
 		.addIndicators({name: "TornamentArrive"})
@@ -206,6 +206,12 @@ define([
 		$('.popup-hidder').on('click', function(){
 			$('.popup-holder').removeClass('active');
 			$('#Jvideo').get(0).pause();
+		});
+		$(document).keyup(function(e) {
+			if (e.keyCode === 27) {
+				$('.popup-holder').removeClass('active');
+				$('#Jvideo').get(0).pause();
+			}
 		});
 	});
 

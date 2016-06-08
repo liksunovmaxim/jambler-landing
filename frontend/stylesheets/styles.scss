@@ -17,6 +17,9 @@ body{
 	@include bp($tablet){
 		font-size: 24px;
 	}
+	@include bp($mobile){
+		font-size: 12px;
+	}
 }
 a{
 	text-decoration: none;
@@ -58,6 +61,9 @@ a{
 	@include bp($tablet){
 		border-radius: 6px;
 	}
+	@include bp($mobile){
+		border-radius: 3px;
+	}
 }
 .fb{
 	background: #3a5795;
@@ -92,6 +98,11 @@ a{
 			height: 6px;
 			top: -42px;
 		}
+		@include bp($mobile){
+			width: 40px;
+			height: 3px;
+			top: -21px;
+		}
 	}
 }
 .logo{
@@ -102,6 +113,10 @@ a{
 		transform: translateX(-50%);
 		z-index: 6;
 	}
+	@include bp($mobile){
+		width: 32px;
+		top: 23px;
+	}
 }
 .menu{
 	display: flex;
@@ -110,9 +125,10 @@ a{
 	position: relative;
 	@include bp($tablet){
 		padding: 58px 40px 25px;
-	}
-	@include bp($tablet){
 		align-items: center;
+	}
+	@include bp($mobile){
+		padding: 29px 20px 12px;
 	}
 	&:before{
 		content: '';
@@ -133,9 +149,16 @@ a{
 		position: relative;
 		z-index: 6;
 		@include anim($param: height, $dur:.3s, $delay: .3s);
+		@include bp($mobile){
+			width: 17px;
+			height: 7px;
+		}
 		&.active{
 			height: 2px;
 			transition-delay: 0s;
+			@include bp($mobile){
+				height: 1px;
+			}
 			&:after{
 				transform: rotate(45deg);
 				transition-delay: .3s;
@@ -155,6 +178,9 @@ a{
 			left: 0;
 			top: 0;
 			@include anim($param: transform, $dur:.3s, $delay: 0s);
+			@include bp($mobile){
+				height: 1px;
+			}
 		}
 		&:after{
 			top: auto;
@@ -180,6 +206,9 @@ a{
 			background: #fff;
 			box-sizing: border-box;
 		}
+		@include bp($mobile){
+			padding: 70px 20px 75px;
+		}
 		a{
 			display: inline-block;
 			vertical-align: middle;
@@ -191,6 +220,9 @@ a{
 				background: transparent !important;
 				font-size: 1.2em;
 				padding: 20px 0 !important;
+			}
+			@include bp($mobile){
+				padding: 10px 0 !important;
 			}
 			&:first-child{
 				margin: 0 27px 0 0;
@@ -218,6 +250,9 @@ a{
 			padding: 2px 0 10px 47px;
 			position: relative;
 			z-index: 6;
+			@include bp($mobile){
+				padding: 1px 0 5px 24px;
+			}
 			&:before{
 				content: '';
 				width: 36px;
@@ -226,6 +261,11 @@ a{
 				left: 0;
 				top: 0;
 				background: url('../images/slider-icons.png') no-repeat 100% 0;
+				@include bp($mobile){
+					background-size: 115px;
+					width: 18px;
+					height: 20px;
+				}
 			}
 		}
 	}
@@ -242,6 +282,9 @@ a{
 			padding: 173px 40px 80px;
 			flex-direction: column;
 		}
+		@include bp($mobile){
+			padding: 120px 20px 40px;
+		}
 	}
 	&__text-block{
 		flex: 0 0 400px;
@@ -249,10 +292,17 @@ a{
 		@include bp($tablet) {
 			margin: 0 0 159px;
 		}
+		@include bp($mobile){
+			flex-basis: auto;
+			margin: 0 0 84px;
+		}
 		.text{
 			margin: 0 0 58px;
 			@include bp($tablet){
 				margin: 0 0 98px;
+			}
+			@include bp($mobile){
+				margin: 0 0 49px;
 			}
 		}
 	}
@@ -265,6 +315,9 @@ a{
 			font-size: 1.5em;
 			padding: 31px 49px;
 		}
+		@include bp($mobile){
+			padding: 15px 25px;
+		}
 	}
 	&__image{
 		position: absolute;
@@ -276,6 +329,7 @@ a{
 		position: relative;
 		text-align: center;
 		z-index: 2;
+		width: 280px;
 		@include bp($tablet){
 			width: 100%;
 			text-align: left;
@@ -289,6 +343,9 @@ a{
 			@include bp($tablet) {
 				font-size: 1.125em;
 				margin: 0 0 47px;
+			}
+			@include bp($mobile) {
+				margin: 0 0 24px;
 			}
 		}
 		.trigger{
@@ -307,6 +364,67 @@ a{
 			left: 0;
 			top: 0;
 			cursor: pointer;
+			display: flex;
+			&:hover{
+				.button{
+					&-text{
+						opacity: 1;
+					}
+				}
+			}
+			.button{
+				margin: auto;
+				width: 50px;
+				height: 30px;
+				background: #f7cb00;
+				border-radius: 3px;
+				color: #fff;
+				position: relative;
+				@include bp($tablet){
+					width: 100px;
+					height: 60px;
+				}
+				@include bp($mobile) {
+					width: 50px;
+					height: 30px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate3d(-25%, -50%, 0);
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 6px 0 6px 6px;
+					border-color: transparent transparent transparent #000000;
+					@include bp($tablet){
+						border-width: 12px 12px 12px;
+					}
+					@include bp($mobile) {
+						border-width: 6px 0 6px 6px;
+					}
+				}
+				&-text{
+					position: absolute;
+					bottom: -25px;
+					width: 150px;
+					left: 50%;
+					transform: translateX(-50%);
+					opacity: .6;
+					font-size: .875em;
+					@include anim($param: opacity, $dur: .2s);
+					@include bp($tablet){
+						width: 165px;
+						bottom: -40px;
+						font-size: 1em;
+					}
+					@include bp($mobile) {
+						width: 95px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -319,6 +437,9 @@ a{
 	padding: 134px 80px;
 	@include bp($tablet) {
 		padding: 209px 40px 143px;
+	}
+	@include bp($mobile) {
+		padding: 104px 20px 71px;
 	}
 	&__holder{
 		position: relative;
@@ -393,6 +514,9 @@ a{
 			flex-grow: 1;
 			width: 100%;
 		}
+		@include bp($mobile) {
+			flex-basis: auto;
+		}
 		li{
 			list-style-type: none;
 			margin: 0 0 111px;
@@ -401,6 +525,9 @@ a{
 				opacity: 1 !important;
 				width: 100%;
 				margin: 0 0 209px;
+			}
+			@include bp($mobile) {
+				margin: 0 0 105px;
 			}
 			&:last-child{
 				@include bp($tablet) {
@@ -430,6 +557,11 @@ a{
 						height: 6px;
 						width: 80px;
 					}
+					@include bp($mobile) {
+						width: 40px;
+						height: 3px;
+						top: -19px;
+					}
 				}
 				&:after{
 					counter-increment: list1;
@@ -445,6 +577,10 @@ a{
 						right: -17px;
 						top: -286px;
 					}
+					@include bp($mobile) {
+						right: -8px;
+						top: -143px;
+					}
 				}
 			}
 		}
@@ -458,6 +594,7 @@ a{
 	}
 	.slider-holder{
 		padding: 86px 0 0;
+		overflow: visible;
 	}
 	.swiper-wrapper{
 		align-items: flex-end;
@@ -466,17 +603,36 @@ a{
 		width: auto;
 		&:nth-child(4){
 			margin: 0 0 0 80px;
+			@include bp($tablet){
+				margin: 0;
+			}
 		}
 		.text{
 			width: 400px;
 			padding: 14px 0 0;
 			margin: 159px 210px 0 159px;
+			@include bp($mobile){
+				margin: 70px 20px 0;
+				width: auto;
+			}
 			&:before{
 				top: 0;
 			}
 		}
 		&:last-child{
 			align-self: flex-start;
+		}
+		.image-holder{
+			position: relative;
+			@include bp($tablet){
+				display: inline-block;
+			}
+			img{
+				@include bp($tablet) {
+					max-width: none;
+					width: 100%;
+				}
+			}
 		}
 		.text-box{
 			color: #fff;
@@ -490,6 +646,10 @@ a{
 			box-sizing: border-box;
 			padding: 15px 20px;
 			line-height: 1.5;
+			text-align: left;
+			@include bp($mobile) {
+				padding: 7px 10px;
+			}
 			&:after{
 				content: '';
 				width: 5px;
@@ -509,6 +669,9 @@ a{
 				bottom: 0;
 				right: 0;
 				background: url('../images/slider-icons.png') no-repeat 0 0;
+				@include bp($mobile) {
+					display: none;
+				}
 			}
 		}
 		&:nth-child(1){
@@ -518,12 +681,36 @@ a{
 				top: -32px;
 				margin: 0;
 				z-index: 1;
+				@include bp($tablet){
+					width: auto;
+					left: 80px;
+					letter-spacing: 1px;
+				}
+				@include bp($mobile){
+					left: 40px;
+				}
+			}
+			.image-holder{
+				@include bp($tablet) {
+					width: 61%;
+				}
 			}
 			.text-box{
 				width: 160px;
 				left: auto;
 				right: -134px;
 				top: 121px;
+				@include bp($tablet){
+					width: 217px;
+					left: auto;
+					right: -200px;
+					top: 121px;
+				}
+				@include bp($mobile){
+					width: 109px;
+					right: -110px;
+					top: 60px;
+				}
 				&:after{
 					top: auto;
 					bottom: -9px;
@@ -538,11 +725,27 @@ a{
 			}
 		}
 		&:nth-child(2){
+			.image-holder{
+				@include bp($tablet) {
+					width: 100%;
+				}
+			}
 			.text-box{
 				width: 261px;
 				left: auto;
 				right: -40px;
 				top: 41px;
+				@include bp($tablet){
+					width: 215px;
+					left: auto;
+					right: 20px;
+					top: 41px;
+				}
+				@include bp($mobile){
+					width: 108px;
+					right: 10px;
+					top: -25px;
+				}
 				&:after{
 					top: auto;
 					bottom: -9px;
@@ -558,15 +761,35 @@ a{
 			}
 		}
 		&:nth-child(3){
+			.image-holder{
+				@include bp($tablet) {
+					width: 100%;
+				}
+			}
 			.text-box{
 				width: 180px;
 				left: -80px;
 				top: auto;
 				bottom: 41px;
+				@include bp($tablet) {
+					width: 214px;
+					left: 8px;
+					top: -169px;
+					bottom: auto;
+				}
+				@include bp($mobile){
+					width: 107px;
+					left: 4px;
+					top: -85px;
+				}
 				&:after{
 					top: -9px;
 					right: -10px;
 					left: auto;
+					@include bp($tablet) {
+						top: auto;
+						bottom: -9px;
+					}
 				}
 				&:before {
 					width: 12px;
@@ -580,10 +803,26 @@ a{
 					right: 10px;
 					top: 29px;
 					bottom: auto;
+					@include bp($tablet) {
+						right: 10px;
+						left: auto;
+						top: -169px;
+						bottom: auto;
+					}
+					@include bp($mobile){
+						right: 5px;
+						left: auto;
+						top: -85px;
+					}
 					&:after{
 						top: auto;
 						bottom: -9px;
 						left: -10px;
+						@include bp($tablet) {
+							top: auto;
+							bottom: -9px;
+							left: -10px;
+						}
 					}
 					&:before {
 						width: 20px;
@@ -596,15 +835,40 @@ a{
 			}
 		}
 		&:nth-child(4){
+			@include bp($tablet) {
+				text-align: center;
+			}
+			.image-holder{
+				@include bp($tablet) {
+					width: 60%;
+				}
+			}
 			.text-box{
 				width: 180px;
 				left: -109px;
 				top: auto;
 				bottom: 43px;
+				@include bp($tablet) {
+					width: 256px;
+					left: auto;
+					top: auto;
+					bottom: 100%;
+					right: -85px;
+				}
+				@include bp($mobile){
+					width: 128px;
+					right: -42px;
+				}
 				&:after{
 					top: -9px;
 					right: -10px;
 					left: auto;
+					@include bp($tablet) {
+						top: auto;
+						right: auto;
+						left: -10px;
+						bottom: -10px;
+					}
 				}
 				&:before {
 					width: 20px;
@@ -616,15 +880,34 @@ a{
 			}
 		}
 		&:nth-child(5){
+			.image-holder{
+				@include bp($tablet) {
+					width: 80%;
+				}
+			}
 			.text-box{
 				width: 188px;
 				left: -38px;
 				top: auto;
 				bottom: 31px;
+				@include bp($tablet) {
+					width: 188px;
+					left: 20px;
+					top: auto;
+					bottom: 95%;
+				}
+				@include bp($mobile){
+					width: 94px;
+					left: 10px;
+				}
 				&:after{
 					top: -9px;
 					right: -10px;
 					left: auto;
+					@include bp($tablet) {
+						top: auto;
+						bottom: -9px;
+					}
 				}
 				&:before {
 					width: 20px;
@@ -639,6 +922,18 @@ a{
 					top: 6px;
 					bottom: auto;
 					width: 265px;
+					@include bp($tablet){
+						left: auto;
+						right: -110px;
+						top: auto;
+						bottom: 100%;
+						width: 265px;
+					}
+					@include bp($mobile){
+						right: -55px;
+						width: 132px;
+						left: auto;
+					}
 					&:after{
 						top: auto;
 						bottom: -9px;
@@ -655,11 +950,27 @@ a{
 			}
 		}
 		&:nth-child(6){
+			.image-holder{
+				@include bp($tablet) {
+					width: 100%;
+				}
+			}
 			.text-box{
 				width: 260px;
 				left: -51px;
 				top: auto;
 				bottom: 76px;
+				@include bp($tablet) {
+					width: 260px;
+					left: 17px;
+					top: -89px;
+					bottom: auto;
+				}
+				@include bp($mobile){
+					width: 130px;
+					left: 9px;
+					top: -50px;
+				}
 				&:after{
 					top: auto;
 					bottom: -9px;
@@ -683,6 +994,73 @@ a{
 			background: #f7cb00;
 		}
 	}
+	.swiper-controls{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin: 20px 0 0;
+		@include bp($mobile){
+			margin: 10px 0 0;
+		}
+	}
+	.swiper-pagination{
+		position: static;
+		align-self: center;
+		span{
+			background: #000;
+			width: 8px;
+			height:8px;
+			border: 4px solid #000;
+			border-radius: 50%;
+			margin: 0 5px;
+			opacity: 1;
+			@include bp($mobile){
+				width: 4px;
+				height: 4px;
+				border-width: 2px;
+				margin: 0 3px;
+			}
+			&.swiper-pagination-bullet-active{
+				background: #fff;
+			}
+		}
+	}
+	.swiper-button-next,
+	.swiper-button-prev{
+		background: transparent;
+		position: relative;
+		margin: 0 0 0 30px;
+		@include bp($mobile){
+			margin: 0 0 0 15px;
+			height: 28px;
+		}
+		&:after{
+			content: '';
+			width: 24px;
+			height: 24px;
+			border-top: 4px solid #000;
+			border-right: 4px solid #000;
+			position: absolute;
+			left: 0;
+			top: 7px;
+			border-radius: 3px;
+			transform: rotate(-135deg);
+			@include bp($mobile){
+				border-width: 2px;
+				width: 12px;
+				height: 12px;
+			}
+		}
+	}
+	.swiper-button-next{
+		margin: 0 30px 0 0;
+		&:after{
+			transform: rotate(45deg);
+		}
+	}
 }
 .social-section{
 	display: flex;
@@ -690,12 +1068,30 @@ a{
 	max-width: 1040px;
 	margin: 0 auto;
 	padding: 120px 80px 80px;
+	@include bp($tablet){
+		padding: 279px 40px 122px;
+		flex-direction: column;
+	}
+	@include bp($mobile){
+		padding: 140px 20px 61px;
+	}
 	&__buttons{
 		flex: 0 0 400px;
 		width: 400px;
+		@include bp($tablet){
+			width: auto;
+			flex-basis: 0;
+		}
 		.button-holder{
 			margin: 0 0 80px;
 			position: relative;
+			@include bp($tablet){
+				top: 0 !important;
+				opacity: 1 !important;
+			}
+			@include bp($mobile){
+				margin: 0 0 40px;
+			}
 		}
 		.button{
 			position: relative;
@@ -709,6 +1105,17 @@ a{
 			font-weight: bold;
 			font-size: .875em;
 			font-family: 'Roboto', sans-serif !important;
+			@include bp($tablet){
+				display: block;
+				width: auto;
+				border-radius: 6px;
+				font-size: 1.25em;
+				letter-spacing: -1.2px;
+				padding: 43px 48px 39px 155px;
+			}
+			@include bp($mobile){
+				padding: 21px 40px 20px 77px;
+			}
 			&.icon-facebook{
 				background: #3a5795;
 				&:before{
@@ -734,6 +1141,14 @@ a{
 				font-size: 1.7em;
 				z-index: 2;
 				font-family: 'icomoon' !important;
+				@include bp($tablet){
+					left: 55px;
+					top: 47px;
+				}
+				@include bp($mobile){
+					left: 26px;
+					top: 24px;
+				}
 			}
 			&:after{
 				content: '';
@@ -745,6 +1160,18 @@ a{
 				z-index: 1;
 				left: 20px;
 				top: 19px;
+				@include bp($tablet){
+					width: 80px;
+					height: 80px;
+					left: 42px;
+					top: 37px;
+				}
+				@include bp($mobile){
+					width: 40px;
+					height: 40px;
+					left: 21px;
+					top: 18px;
+				}
 			}
 		}
 		.count{
@@ -753,11 +1180,25 @@ a{
 			margin: 0 0 0 16px;
 			display: inline-block;
 			vertical-align: super;
+			@include bp($tablet){
+				display: none;
+			}
 		}
 	}
 	.text{
 		flex: 0 0 400px;
 		width: 400px;
+		@include bp($tablet){
+			width: auto;
+			order: -1;
+			top: 0 !important;
+			opacity: 1 !important;
+			flex-basis: 0;
+			margin: 0 0 60px;
+		}
+		@include bp($mobile){
+			margin: 0 0 30px;
+		}
 		&:before{
 			display: none;
 		}
@@ -771,6 +1212,11 @@ a{
 				position: absolute;
 				top: -13px;
 				left: 0;
+				@include bp($tablet){
+					width: 80px;
+					height: 6px;
+					top: -39px;
+				}
 			}
 		}
 	}
@@ -782,19 +1228,41 @@ a{
 	max-width: 1360px;
 	margin: 0 auto;
 	box-sizing: border-box;
+	@include bp($tablet){
+		flex-direction: column;
+		padding: 0;
+	}
 	&__tournaments{
-		// flex-shrink: 0;
 		position: relative;
+		@include bp($tablet){
+			top: 0 !important;
+			opacity: 1 !important;
+		}
 	}
 	.text{
 		margin: .9% 4% 0 6.6%;
-		letter-spacing: 0px;
+		letter-spacing: 0;
 		flex-basis: 350px;
+		@include bp($tablet){
+			top: 0 !important;
+			opacity: 1 !important;
+			margin: 0 40px 115px;
+			flex-basis: 0;
+		}
+		@include bp($mobile){
+			margin: 0 20px 57px;
+		}
 	}
 }
 .registration{
 	background: $bgSection;
 	padding: 160px 0;
+	@include bp($tablet) {
+		padding: 203px 0 100px;
+	}
+	@include bp($mobile) {
+		padding: 102px 0 34px;
+	}
 	&__wrapper{
 		width: 880px;
 		margin: 0 auto;
@@ -802,15 +1270,42 @@ a{
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		@include bp($tablet){
+			width: auto;
+			padding: 0 40px;
+			flex-direction: column;
+		}
+		@include bp($mobile) {
+			padding: 0 20px;
+		}
 	}
 	&__form{
 		flex: 0 0 420px;
+		@include bp($tablet) {
+			flex-basis: 0;
+			margin: 0 0 198px;
+		}
+		@include bp($mobile) {
+			margin: 0 0 101px;
+		}
 		.text{
 			margin: 0 0 58px;
+			@include bp($tablet) {
+				margin: 0 0 141px;
+			}
+			@include bp($mobile) {
+				margin: 0 0 74px;
+			}
 		}
 		.input-holder{
 			margin: 0 0 46px;
 			position: relative;
+			@include bp($tablet) {
+				margin: 0 0 92px;
+			}
+			@include bp($mobile) {
+				margin: 0 0 48px;
+			}
 		}
 		input{
 			background: transparent;
@@ -820,6 +1315,15 @@ a{
 			border-bottom: 2px solid #999;
 			font-size: 1.125em;
 			padding: 0 0 11px 23px;
+			@include bp($tablet){
+				box-sizing: border-box;
+				border-width: 4px;
+				padding: 0 0 33px 45px;
+			}
+			@include bp($mobile) {
+				border-width: 2px;
+				padding: 0 0 16px 22px;
+			}
 			&:focus, &:valid{
 				& + label{
 					transform: translate3d(0, -20px, 0);
@@ -836,6 +1340,13 @@ a{
 				@include anim($dur: .2s);
 				@include anim-param(font-size, transform);
 				cursor: text;
+				@include bp($tablet){
+					font-size: 1.5em;
+					left: 20px;
+				}
+				@include bp($mobile) {
+					left: 0;
+				}
 			}
 		}
 		button{
@@ -845,12 +1356,25 @@ a{
 			margin: 9px 0 0;
 			display: inline-block;
 			padding: 14px 30px;
+			@include bp($tablet){
+				display: block;
+				text-align: center;
+				font-size: 1.5em;
+				padding: 31px 49px;
+				width: 100%;
+			}
+			@include bp($mobile) {
+				padding: 15px 25px;
+			}
 		}
 	}
 	&__social{
 		flex: 0 0 345px;
 		.text{
 			margin: 0 0 89px;
+			@include bp($mobile) {
+				margin: 0 0 50px;
+			}
 		}
 		a{
 			display: inline-block;
@@ -861,6 +1385,20 @@ a{
 			font-size: 1.125em;
 			border-radius: 2px;
 			margin: 0 0 21px;
+			@include bp($tablet){
+				display: block;
+				text-align: center;
+				font-size: 1.5em;
+				padding: 31px 49px;
+				width: 100%;
+				border-radius: 6px;
+				box-sizing: border-box;
+				margin: 0 0 41px;
+			}
+			@include bp($mobile) {
+				padding: 15px 49px;
+				margin: 0 0 20px;
+			}
 			&:last-of-type{
 				margin: 0;
 			}
@@ -871,12 +1409,27 @@ a{
 	border-top: 1px solid #d8d8d8;
 	background: $bgSection;
 	color: #9a9a9a;
+	@include bp($tablet) {
+		border-width: 2px;
+	}
+	@include bp($mobile) {
+		border-width: 1px;
+	}
 	.container{
 		padding: 30px 80px;
 		font-size: .75em;
 		display: flex;
 		justify-content: space-between;
 		box-sizing: border-box;
+		@include bp($tablet) {
+			padding: 40px 40px 57px;
+			flex-direction: column;
+			font-size: 1em;
+			position: relative;
+		}
+		@include bp($mobile) {
+			padding: 20px 20px 28px;
+		}
 	}
 	a{
 		color: $colorBtn;
@@ -885,12 +1438,35 @@ a{
 		flex: 0 0 520px;
 		display: flex;
 		justify-content: space-between;
+		@include bp($tablet) {
+			flex-basis: auto;
+			flex-direction: column;
+		}
 		.title{
 			margin: 0 0 29px;
+			@include bp($tablet) {
+				display: inline-block;
+				margin: 0 20px 39px 0;
+			}
+			@include bp($mobile) {
+				margin: 0 10px 20px 0;
+			}
 		}
 		.links{
+			ul{
+				@include bp($tablet) {
+					display: inline-block;
+				}
+			}
 			li{
 				margin: 0 0 6px;
+				@include bp($tablet) {
+					display: inline-block;
+					margin: 0 15px 0 0;
+				}
+				@include bp($mobile) {
+					margin: 0 8px 0 0;
+				}
 				&:last-of-type{
 					margin: 0;
 				}
@@ -902,18 +1478,56 @@ a{
 		flex: 0 0 160px;
 		flex-direction: column;
 		justify-content: space-between;
+		@include bp($tablet) {
+			flex-basis: auto;
+		}
 		span{
 			display: block;
 		}
 		ul{
 			display: flex;
 			justify-content: space-between;
+			@include bp($tablet) {
+				justify-content: flex-start;
+				position: relative;
+				margin: 0 0 50px;
+				&:before{
+					content: 'LICENCES';
+					margin: 0 20px 0 0;
+				}
+			}
+			@include bp($mobile) {
+				margin: 0 0 25px;
+				&:before{
+					margin: 0 10px 0 0;
+				}
+			}
+			li{
+				@include bp($tablet) {
+					margin: 0 15px 0 0;
+				}
+				@include bp($mobile) {
+					margin: 0 7px 0 0;
+				}
+			}
 		}
 	}
 	.copy{
 		padding: 0 0 0 40px;
 		line-height: 1.3;
 		background: url('../images/logo-foot.png') no-repeat -1px 0;
+		@include bp($tablet) {
+			background: url('../images/logo-foot-mobile.png') no-repeat -1px 0;
+			padding: 0 0 15px 84px;
+			width: 180px;
+			margin: 0 0 45px;
+		}
+		@include bp($mobile) {
+			padding: 0 0 7px 33px;
+			width: 90px;
+			margin: 0 0 22px;
+			background: url('../images/logo-foot.png') no-repeat -1px 0;
+		}
 	}
 	&__social{
 		flex: 0 0 320px;
@@ -921,8 +1535,74 @@ a{
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		@include bp($tablet) {
+			flex-basis: auto;
+		}
+		.social{
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			@include bp($tablet) {
+				position: absolute;
+				right: 40px;
+				top: 40px;
+			}
+			@include bp($mobile) {
+				right: 20px;
+				top: 20px;
+			}
+			li{
+				display: inline-block;
+				margin: 0 0 0 7px;
+				a{
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					background: #c0c0c0;
+					position: relative;
+					@include bp($tablet) {
+						width: 60px;
+						height: 60px;
+					}
+					@include bp($mobile) {
+						width: 30px;
+						height: 30px;
+					}
+					&:before{
+						font-size: 1.75em;
+						color: $bgSection;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate3d(-50%,-50%,0);
+					}
+				}
+			}
+		}
 	}
 	.apps{
+		@include bp($tablet) {
+			position: relative;
+			text-align: center;
+			padding: 57px 0 0;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #c0c0c0;
+				height: 2px;
+				width: 600%;
+				transform: translateX(-50%);
+			}
+		}
+		@include bp($mobile) {
+			padding: 28px 0 0;
+			&:before {
+				height: 1px;
+			}
+		}
 		a{
 			display: inline-block;
 			text-align: left;
@@ -930,8 +1610,26 @@ a{
 			width: 130px;
 			height: 40px;
 			background: url('../images/app-stores.png') no-repeat;
-			&.apple{ background-position: 0 0; }
-			&.google{ background-position: 0 100%; }
+			@include bp($tablet) {
+				width: 260px;
+				height: 80px;
+				background: url('../images/app-stores-mobile.png') no-repeat;
+			}
+			@include bp($mobile) {
+				width: 130px;
+				height: 40px;
+				background: url('../images/app-stores.png') no-repeat;
+			}
+			&.apple{
+				background-position: 0 0;
+			}
+			&.google{
+				background-position: 0 100%;
+				margin: 0 0 0 6px;
+				@include bp($tablet) {
+					background-position: 100% 0;
+				}
+			}
 		}
 	}
 }
@@ -968,6 +1666,7 @@ a{
 	margin: 0 auto;
 	position: relative;
 	z-index: 1;
+	max-width: 100%;
 }
 
 // Scroll Animation
