@@ -558,6 +558,9 @@ a{
 				display: none;
 			}
 			.text-holder{
+				@include bp($tablet) {
+					opacity: 1 !important;
+				}
 				&:before{
 					content: '';
 					width: 40px;
